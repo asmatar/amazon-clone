@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Product from './Product'
 
 function Home() {
     return (
@@ -8,7 +9,8 @@ function Home() {
 
             </Banner>
             <Content>
-                I'm the content
+                <Product />
+                <Product />
             </Content>
         </Container>
     )
@@ -29,11 +31,13 @@ const Banner = styled.div`
     // make sure that no matter that big is the windows screen, it'll cover it
     background-size: cover;
     // to apply a gradient to the background, the opacity go from 1 to 0 from top to bottom
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) )
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
 `
 const Content = styled.div`
-    background: white;
+    // background: white;
     padding-left: 10px;
     padding-right: 10px;
     margin-top: -350px;
+    display: flex;
 `
