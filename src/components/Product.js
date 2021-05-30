@@ -7,11 +7,11 @@ function Product() {
             <Title>Iphone</Title>
             <Price> 1449 $</Price>
             <Rating> ****</Rating>
-            <Image src='https://images-na.ssl-images-amazon' ></Image>
+            <Image src='https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SX342_.jpg' />
             <ActionSection>
             <AddToCartButton> add to cart</AddToCartButton> 
 
-            </ActionSection>
+            </ActionSection> 
         </Container>
     )
 }
