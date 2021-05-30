@@ -2,7 +2,9 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 function Header() {
     return (
         <Container>
@@ -35,11 +37,12 @@ function Header() {
                     <OptionLineOne>Return</OptionLineOne>
                     <OptionLineTwo>& Order</OptionLineTwo>
                 </HeaderOption>
-
-                <HeaderOptionCart>
-                    <ShoppingBasketIcon />
-                    <CartCount>4</CartCount>
-                </HeaderOptionCart>
+                    <HeaderOptionCart>
+                <Link to='/cart'>
+                        <ShoppingBasketIcon />
+                        <CartCount>4</CartCount>
+                </Link>
+                    </HeaderOptionCart>
             </HeaderNavItems>
         </Container>
       
@@ -111,8 +114,14 @@ padding: 10px 9px 10px 9px;
 `
 const HeaderOptionCart= styled.div`
 display: flex;
-align-items: center;
-padding-right: 8px;
+
+a {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-right: 9px;
+    text-decoration: none;
+}
 `
 const CartCount= styled.div`
     padding-left: 4px;
