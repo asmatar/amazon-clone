@@ -42,8 +42,17 @@ function Home() {
 
             </Banner>
             <Content>
-                <Product />
-                <Product />
+                {
+                    products.map((data) => (
+                        <Product 
+                        title={data.product.name} 
+                        price ={data.product.price}
+                        rating ={data.product.rating}
+                        image ={data.product.image}
+                        />
+
+                    ))
+                }
             </Content>
         </Container>
     )
