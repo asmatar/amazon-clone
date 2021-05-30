@@ -9,7 +9,9 @@ function Header() {
     return (
         <Container>
             <HeaderLogo>
-                <img src={"https://i.imgur.com/7I9Was5.png"} alt="image logo" />
+                <Link to='/'>
+                    <img src={"https://i.imgur.com/7I9Was5.png"} alt="image logo" />
+                </Link>
             </HeaderLogo>
 
             <HeaderOptionAdress>
@@ -73,55 +75,55 @@ const HeaderOptionAdress = styled.div`
 `
 const OptionLineOne = styled.div``
 const OptionLineTwo = styled.div`
-font-weight: 700;
+    font-weight: 700;
 `
 const HeaderSearch = styled.div`
-display: flex;
-flex-grow: 1;
-height: 40px;
-border-radius: 4px;
-overflox: hidden;
-margin-left: 4px;
-background-color: white;
-:focus-within {
-    box-shadow: 0 0 0 3px #F90;
-}
+    display: flex;
+    flex-grow: 1;
+    height: 40px;
+    border-radius: 4px;
+    overflox: hidden;
+    margin-left: 4px;
+    background-color: white;
+    :focus-within {
+        box-shadow: 0 0 0 3px #F90;
+    }
 `
 const HeaderSearchInput = styled.input`
-flex-grow:1;
-border: 0; 
+    flex-grow:1;
+    border: 0; 
 
-:focus {
-    outline: none;
-}
+    :focus {
+        outline: none;
+    }
 `
 const HeaderSearchIconContainer = styled.div`
-background-color: #febd69;
-width: 45px;
-color: black;
-display: flex;
-justify-content: center;
-align-items: center;
+    background-color: #febd69;
+    width: 45px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 `
 const HeaderNavItems= styled.div`
-display: flex;
+    display: flex;
 
 `
 const HeaderOption= styled.div`
-padding: 10px 9px 10px 9px;
+    padding: 10px 9px 10px 9px;
 
 `
 const HeaderOptionCart= styled.div`
-display: flex;
-
-a {
     display: flex;
-    align-items: center;
-    color: white;
-    padding-right: 9px;
-    text-decoration: none;
-}
+
+    a {
+        display: flex;
+        align-items: center;
+        color: white;
+        padding-right: 9px;
+        text-decoration: none;
+    }
 `
 const CartCount= styled.div`
     padding-left: 4px;
