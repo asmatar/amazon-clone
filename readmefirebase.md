@@ -10,3 +10,4 @@
 6. dans firebase ( le site) on click sur l'onglet **firestore database** et on ***creer une BDD***
 7. dans le fichier home on :
     -**import {db} from firebase**
+    - puis nous récupérons les datas comme 

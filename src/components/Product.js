@@ -2,14 +2,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Product({title, price, rating, image}) {
+function Product({title, price, rating, image, id}) {
     return (
         <Container>
             <Title> {title} </Title>
             <Price> {price}</Price>
             <Rating> 
                 {
-                    Array(rating).fill().map(rating => <p>	★ </p> )
+                    Array(rating).fill().map(rating => <p>★ </p> )
                 }
             </Rating>
             <Image src={image} />
