@@ -10,7 +10,7 @@ function Header({cartItems}) {
     const getCount = () => {
         let count = 0;
         console.log(cartItems)
-        //loop through all cart items
+        //loop through all cart items, and for each one, we'll take the number of quantity and add it
         cartItems.forEach(item => {
             // add the quantity of the cartItem to total
             count += item.product.quantity;
