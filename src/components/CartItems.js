@@ -28,6 +28,11 @@ const Container = styled.div`
     margin-right: 18px;
     padding: 20px;
 `
-const Title = styled.h1``
-const ItemsContainer = styled.div``
+const Title = styled.h1`
+    margin-bottom:8px;
+    
+`
+const ItemsContainer = styled.div`
+    
+`
 

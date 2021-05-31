@@ -1,8 +1,36 @@
 
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import { db } from '../firebase';
 
 function Product({title, price, rating, image, id}) {
+
+    const addToCart = ()=>{
+        // this'll create a new document from the product we put in
+        const cartItem = db.collection('cartItems').doc(id);
+        cartItem.get().then((doc)=>{
+            console.log(doc)
+            // we want to know if the cart exist yet in the collection
+            if (doc.exists){
+                // if exist we update the data 
+                cartItem.update({
+                    // increasing the quantity
+                    quantity: doc.data().quantity + 1
+                })
+                // if it does NOT exist we put it in the collection
+            } else {
+                // creating a news id. the function 'set' is to put in the database
+                db.collection('cartItems').doc(id).set({
+                    // in 'set' we put the data that we want
+                    name: title,
+                    image,
+                    price,
+                    // the quantty is one, because it's the first product
+                    quantity :1 
+                })
+            }
+        })
+    }
     return (
         <Container>
             <Title> {title} </Title>
@@ -14,7 +42,7 @@ function Product({title, price, rating, image, id}) {
             </Rating>
             <Image src={image} />
             <ActionSection>
-                <AddToCartButton> add to cart</AddToCartButton> 
+                <AddToCartButton onClick={addToCart}> add to cart</AddToCartButton> 
             </ActionSection> 
         </Container>
     )
@@ -50,6 +78,7 @@ const AddToCartButton = styled.button`
     border: 2px solid #a88734;
     border-radius: 2px;
     height: 30px;
+    cursor: pointer;
 `
 const ActionSection = styled.div`
     margin-top: 12px;
