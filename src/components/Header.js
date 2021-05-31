@@ -5,7 +5,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-function Header({cartItems, user}) {
+function Header({cartItems, user, signOut}) {
 console.log('je suis dans le header', user)
     const getCount = () => {
         let count = 0;
@@ -47,7 +47,7 @@ console.log('je suis dans le header', user)
                     <OptionLineTwo> Account & List</OptionLineTwo>
                 </HeaderOption>
 
-                <HeaderOption>
+                <HeaderOption onClick={signOut}>
                     <OptionLineOne>Return</OptionLineOne>
                     <OptionLineTwo>& Order</OptionLineTwo>
                 </HeaderOption>
@@ -127,6 +127,7 @@ const HeaderNavItems= styled.div`
 `
 const HeaderOption= styled.div`
     padding: 10px 9px 10px 9px;
+    cursor:pointer;
 
 `
 const HeaderOptionCart= styled.div`

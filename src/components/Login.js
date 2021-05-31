@@ -17,6 +17,8 @@ function Login({setUser}) {
                 email: user.email,
                 photo: user.photoURL
             }
+            // A. to prevent a refresh we put the user into the localstorage => line 14 into APP
+            localStorage.setItem('user', JSON.stringify(newUser))
             // 6. we put the new user Info as a parameter of setUser which'll change the state 'user' property, we pass it on props
             console.log('je suis dans le setUser avant', newUser)
             setUser(newUser)
