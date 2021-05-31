@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { db } from '../firebase';
+
 function CartItem({id, item}) {
 
     let options = []
@@ -7,6 +9,14 @@ function CartItem({id, item}) {
     for (let i = 1; i <Math.max(item.quantity + 1, 20); i++){
         // when we select the number we push it into 'options'
         options.push( <option value={i}> Qty: {i} </option> )
+    }
+
+    const changeQuantity = (newQuantity) => {
+        console.log(newQuantity)
+        // we update the database with the value of the imput which is newQuantity, the changeQuantity parameter ( event.target.value)
+        db.collection('cartItems').doc(id).update({
+            quantity: parseInt(newQuantity)
+        })
     }
 
     return (
@@ -24,6 +34,8 @@ function CartItem({id, item}) {
                         {/* this is a select button */}
                         <select
                         value= {item.quantity}
+                        onChange={(event)=> changeQuantity(event.target.value)
+                        }
                         >
                             {options} 
                         </select>
