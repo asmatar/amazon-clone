@@ -10,4 +10,20 @@
 6. dans firebase ( le site) on click sur l'onglet **firestore database** et on ***creer une BDD***
 7. dans le fichier home on :
     -**import {db} from firebase**
-    - puis nous récupérons les datas comme 
+    - puis nous récupérons les datas comme
+
+   **Méthode firebase**
+
+   update
+   delete
+   get
+   set
+
+   **authentification**
+
+Dans l'onglet authentification
+- on choisi avec quoi s'authentififier, on click sur **disable**, puis **enable**, on choisi l'email a utiliser
+
+on va dans firebase.js on écrit pour creer une authetification : **const auth = firebase.auth**, puis on l'export
+
+on import un provider avec google: **const provider = new firebase.auth.GoogleAuthProvider()**, puis on l'export
