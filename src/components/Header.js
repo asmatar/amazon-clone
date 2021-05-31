@@ -5,7 +5,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-function Header() {
+function Header({cartItems}) {
+
+    const getCount = () => {
+        let count = 0;
+        console.log(cartItems)
+        //loop through all cart items
+        cartItems.forEach(item => {
+            // add the quantity of the cartItem to total
+            count += item.product.quantity;
+        });
+        return count;
+    }
+
     return (
         <Container>
             <HeaderLogo>
@@ -42,7 +54,10 @@ function Header() {
                     <HeaderOptionCart>
                 <Link to='/cart'>
                         <ShoppingBasketIcon />
-                        <CartCount>4</CartCount>
+                        <CartCount>
+                            {/*  t will call the function and return the number of count */}
+                            {getCount()}
+                            </CartCount>
                 </Link>
                     </HeaderOptionCart>
             </HeaderNavItems>
