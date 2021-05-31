@@ -19,10 +19,23 @@ function Cart({cartItems}) {
     // save it
   }
 
+  const getCount = () => {
+    let count = 0;
+    console.log(cartItems)
+    //loop through all cart items, and for each one, we'll take the number of quantity and add it
+    cartItems.forEach(item => {
+        // add the quantity of the cartItem to total
+        count += item.product.quantity;
+    });
+    return count;
+}
+
+
     return (
         <Container>
           <CartItems cartItems={cartItems}/>
-          <CartTotal getTotalPrice={getTotalPrice}/>
+          <CartTotal getTotalPrice={getTotalPrice}
+          getCount={getCount}/>
         </Container>
     )
 }
