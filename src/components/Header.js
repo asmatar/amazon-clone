@@ -5,8 +5,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-function Header({cartItems}) {
-
+function Header({cartItems, user}) {
+console.log('je suis dans le header', user)
     const getCount = () => {
         let count = 0;
         console.log(cartItems)
@@ -29,7 +29,7 @@ function Header({cartItems}) {
             <HeaderOptionAdress>
                 <LocationOnIcon />
                 <HeaderOption>
-                    <OptionLineOne>Hello</OptionLineOne>
+                    <OptionLineOne>Hello </OptionLineOne>
                     <OptionLineTwo>Select your adress</OptionLineTwo>
                 </HeaderOption>
             </HeaderOptionAdress>
@@ -43,7 +43,7 @@ function Header({cartItems}) {
 
             <HeaderNavItems>
                 <HeaderOption>
-                    <OptionLineOne>Hello, nazary</OptionLineOne>
+                    <OptionLineOne>Hello, {user.name}</OptionLineOne>
                     <OptionLineTwo> Account & List</OptionLineTwo>
                 </HeaderOption>
 
