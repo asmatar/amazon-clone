@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 function CartItem({id, item}) {
+
+    let options = []
+    // we most amount we can buy'll be 20 items, or the number you've selected before in the data base
+    for (let i = 1; i <Math.max(item.quantity + 1, 20); i++){
+        // when we select the number we push it into 'options'
+        options.push( <option value={i}> Qty: {i} </option> )
+    }
+
     return (
         <Container>
             <ImageContainer>
@@ -13,7 +21,12 @@ function CartItem({id, item}) {
                 </CartItemInfoTop>
                 <CartItemInfoButtom>
                     <CartItemQuantity>
-                        {item.quantity}
+                        {/* this is a select button */}
+                        <select
+                        value= {item.quantity}
+                        >
+                            {options} 
+                        </select>
                     </CartItemQuantity>
                     <CartItemDelete>Delete</CartItemDelete>
                 </CartItemInfoButtom>
@@ -33,6 +46,7 @@ const Container = styled.div`
     padding-top: 12px;
     padding-bottom: 12px;
     display: flex;
+    border-bottom: 1px solid grey;
 `
 const ImageContainer = styled.div`
     width: 180px;
@@ -61,8 +75,20 @@ const CartItemInfoTop = styled.div`
 const CartItemInfoButtom = styled.div`
     display: flex;
     margin-top: 4px;
+    align-item: center;
 `
-const CartItemQuantity = styled.div``
+const CartItemQuantity = styled.div`
+    select {
+        border-radius: 7px;
+        background-color: #F0F2F2;
+        padding: 8px;
+        box-shadow: 0 2px 5px rgba(15,17,17, 0.15);
+        
+        :focus {
+            outline: none;
+        }
+    }
+`
 const CartItemDelete = styled.div`
     color #007185;
     margin-left: 16px;
