@@ -19,6 +19,12 @@ function CartItem({id, item}) {
         })
     }
 
+    const deleteItem = (event) => {
+        event.preventDefault();
+        //now we delete from the db
+        db.collection('cartItems').doc(id).delete();
+    }
+
     return (
         <Container>
             <ImageContainer>
@@ -40,7 +46,7 @@ function CartItem({id, item}) {
                             {options} 
                         </select>
                     </CartItemQuantity>
-                    <CartItemDelete>Delete</CartItemDelete>
+                    <CartItemDelete onClick={deleteItem}>Delete</CartItemDelete>
                 </CartItemInfoButtom>
 
             </CartItemInfo>
