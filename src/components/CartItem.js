@@ -12,14 +12,16 @@ function CartItem({id, item}) {
                     <h2>{item.name}</h2>
                 </CartItemInfoTop>
                 <CartItemInfoButtom>
-                    <CartItemQuantity>{item.quantity}</CartItemQuantity>
+                    <CartItemQuantity>
+                        {item.quantity}
+                    </CartItemQuantity>
                     <CartItemDelete>Delete</CartItemDelete>
                 </CartItemInfoButtom>
 
             </CartItemInfo>
 
             <CartItemPrice>
-                {item.price}
+                ${item.price}
             </CartItemPrice>
             
         </Container>
@@ -46,7 +48,10 @@ const ImageContainer = styled.div`
         width: 100%;
     }
 `
-const CartItemInfo = styled.div``
+const CartItemInfo = styled.div`
+// to push the div as big as possible
+    flex-grow:1; 
+`
 const CartItemInfoTop = styled.div`
     color: #007185;
     h2 {

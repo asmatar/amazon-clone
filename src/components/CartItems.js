@@ -21,8 +21,8 @@ function CartItems({cartItems}) {
 export default CartItems
 
 const Container = styled.div`
-    height: 300px;
-    background-color: FFF;
+    // height: 300px;
+    background-color: #FBFCFC;
     // we decide cartItem to occupate 80% of the space
     flex: 0.8;
     margin-right: 18px;
@@ -33,6 +33,6 @@ const Title = styled.h1`
     
 `
 const ItemsContainer = styled.div`
-    
+
 `
 
