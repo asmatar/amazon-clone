@@ -2,13 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import CartItem from './CartItem';
 
-function CartItems() {
+function CartItems({cartItems}) {
     return (
         <Container>
             <Title>Shopping Cart</Title>
             <hr />
             <ItemsContainer>
-                <CartItem />
+                {
+                    cartItems.map((item)=>(
+                        <CartItem item={item.product} id={item.id}/>
+                    ))
+                }
             </ItemsContainer>
         </Container>
     )

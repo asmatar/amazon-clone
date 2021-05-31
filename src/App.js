@@ -37,7 +37,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/cart'>
-              <Cart />  
+              <Cart cartItems={cartItems}/>  
           </Route>
           <Route exact path='/'>
               <Home />

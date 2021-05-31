@@ -1,25 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-function CartItem() {
+function CartItem({id, item}) {
     return (
         <Container>
             <ImageContainer>
-                <img src='https://images-na.ssl-images-amazon.com/images/I/81WhK5%2Bgf2L._AC_SL1500_.jpg' alt="" />
+                <img src={item.image} alt="" />
             </ImageContainer>
 
             <CartItemInfo>
                 <CartItemInfoTop>
-                    <h2>020 Apple iPad Pro (12,9 Pouces, Wi-FI, 256 Go) - Gris sidéral (4ᵉ génération)</h2>
+                    <h2>{item.name}</h2>
                 </CartItemInfoTop>
                 <CartItemInfoButtom>
-                    <CartItemQuantity>5</CartItemQuantity>
+                    <CartItemQuantity>{item.quantity}</CartItemQuantity>
                     <CartItemDelete>Delete</CartItemDelete>
                 </CartItemInfoButtom>
 
             </CartItemInfo>
 
             <CartItemPrice>
-                $ 1449
+                {item.price}
             </CartItemPrice>
             
         </Container>
