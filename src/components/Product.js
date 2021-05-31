@@ -6,6 +6,7 @@ import { db } from '../firebase';
 function Product({title, price, rating, image, id}) {
 
     const addToCart = ()=>{
+        console.log(id)
         // this'll create a new document from the product we put in
         const cartItem = db.collection('cartItems').doc(id);
         cartItem.get().then((doc)=>{
