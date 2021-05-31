@@ -4,6 +4,7 @@ import './App.css';
 import Cart from './components/Cart';
 import Header from './components/Header';
 import Home from './components/Home';
+import Login from './components/Login';
 import { db } from './firebase';
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
       <div className="App">
         <Header cartItems={cartItems}/>
         <Switch>
+        <Route exact path='/login'>
+              <Login />
+          </Route>
           <Route exact path='/cart'>
               <Cart cartItems={cartItems}/>  
           </Route>
