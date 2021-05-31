@@ -38,6 +38,7 @@ function App() {
   const signOut = () => {
     auth.signOut().then(()=>{
       setUser(null)
+      localStorage.removeItem('user')
     })
   }
 
