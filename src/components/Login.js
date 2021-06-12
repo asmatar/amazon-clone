@@ -11,7 +11,7 @@ function Login({setUser}) {
             //4. we stock the user in 'user'
             let user = result.user;
             //5. the user is an object which contain many thigs, we stock the user info in a variable new user
-            console.log('auth. signinwithpopup', user)
+            // console.log('auth. signinwithpopup', user)
             let newUser = {
                 name: user.displayName,
                 email: user.email,
@@ -20,9 +20,9 @@ function Login({setUser}) {
             // A. to prevent a refresh we put the user into the localstorage => line 14 into APP
             localStorage.setItem('user', JSON.stringify(newUser))
             // 6. we put the new user Info as a parameter of setUser which'll change the state 'user' property, we pass it on props
-            console.log('je suis dans le setUser avant', newUser)
+            // console.log('je suis dans le setUser avant', newUser)
             setUser(newUser)
-            console.log('je suis dans le setUser apres', newUser)
+            // console.log('je suis dans le setUser apres', newUser)
         }).catch((error)=>{
             alert(error.message)
         })

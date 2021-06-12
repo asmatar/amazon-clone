@@ -32,8 +32,8 @@ function App() {
   useEffect(() => {
     getCartItems();
   }, [])
-  console.log('user', user)
-  console.log(cartItems)
+  // console.log('user', user)
+  // console.log(cartItems)
 
   const signOut = () => {
     auth.signOut().then(()=>{

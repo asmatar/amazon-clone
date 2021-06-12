@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 function Header({cartItems, user, signOut}) {
-console.log('je suis dans le header', user)
+// console.log('je suis dans le header', user)
     const getCount = () => {
         let count = 0;
-        console.log(cartItems)
+        // console.log(cartItems)
         //loop through all cart items, and for each one, we'll take the number of quantity and add it
         cartItems.forEach(item => {
             // add the quantity of the cartItem to total

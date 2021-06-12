@@ -10,7 +10,7 @@ function Product({title, price, rating, image, id}) {
         // this'll create a new document from the product we put in
         const cartItem = db.collection('cartItems').doc(id);
         cartItem.get().then((doc)=>{
-            console.log(doc)
+            // console.log(doc)
             // we want to know if the cart exist yet in the collection
             if (doc.exists){
                 // if exist we update the data 
@@ -35,7 +35,7 @@ function Product({title, price, rating, image, id}) {
     return (
         <Container>
             <Title> {title} </Title>
-            <Price> {price}</Price>
+            <Price> {price} $</Price>
             <Rating> 
                 {
                     Array(rating).fill().map(rating => <p>★ </p> )
@@ -61,7 +61,9 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
 `
-const Title = styled.span``
+const Title = styled.span`
+height : 20%;
+`
 const Price = styled.span`
     font-weight: 500;
     margin-top: 3px;

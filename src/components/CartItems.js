@@ -10,7 +10,7 @@ function CartItems({cartItems}) {
             <ItemsContainer>
                 {
                     cartItems.map((item)=>(
-                        <CartItem item={item.product} id={item.id}/>
+                        <CartItem key={item.id} item={item.product} id={item.id}/>
                     ))
                 }
             </ItemsContainer>

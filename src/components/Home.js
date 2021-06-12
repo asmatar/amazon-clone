@@ -12,7 +12,7 @@ function Home() {
         //3.we want to grab the table 'product'. we grab the document with 'onSnapshot' which is a native function to get it. We grab the document which is all the firebase things, it's not ourproducts yet !
         db.collection('products').onSnapshot((snapshot)=> {
             // 4. here the all document !
-            console.log(snapshot)
+            // console.log(snapshot)
             // 5. creation of a variable to stock the product
             let tempProducts = []
             // after grabing the all document, we want to have acces to our data
@@ -30,11 +30,11 @@ function Home() {
     }
     
     useEffect(() => {
-        console.log('call product')
+        // console.log('call product')
         getProducts()
     }, [])
 
-    console.log(products)
+    // console.log(products)
     
     return (
         <Container>
@@ -45,6 +45,7 @@ function Home() {
                 {
                     products.map((data) => (
                         <Product 
+                        key={data.id}
                         title={data.product.name} 
                         price ={data.product.price}
                         rating ={data.product.rating}
@@ -82,5 +83,7 @@ const Content = styled.div`
     padding-left: 10px;
     padding-right: 10px;
     margin-top: -350px;
+    /* margin-bottom: 10px; */
     display: flex;
+    flex-wrap: wrap;
 `
