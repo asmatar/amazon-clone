@@ -13,7 +13,7 @@ function CartItem({id, item}) {
 
     const changeQuantity = (newQuantity) => {
         console.log(newQuantity)
-        // we update the database with the value of the imput which is newQuantity, the changeQuantity parameter ( event.target.value)
+        // we update the database with the value of  the imput which is newQuantity, the changeQuantity parameter ( event.target.value)
         db.collection('cartItems').doc(id).update({
             quantity: parseInt(newQuantity)
         })
@@ -93,7 +93,7 @@ const CartItemInfoTop = styled.div`
 const CartItemInfoButtom = styled.div`
     display: flex;
     margin-top: 4px;
-    align-item: center;
+    align-items: center;
 `
 const CartItemQuantity = styled.div`
     select {
@@ -108,7 +108,7 @@ const CartItemQuantity = styled.div`
     }
 `
 const CartItemDelete = styled.div`
-    color #007185;
+    color: #007185;
     margin-left: 16px;
     cursor: pointer;
 `

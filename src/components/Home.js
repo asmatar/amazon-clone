@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { db } from '../firebase'
-import Product from './Product'
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { db } from '../firebase';
+import NavBar from './NavBar';
+import Product from './Product';
 
 function Home() {
     // we want to save the database into the state react, un products.
@@ -28,16 +29,37 @@ function Home() {
             setProducts(tempProducts)
         })
     }
-    
+
+    // const handleClickCat = () => {
+    //     products.filter(product => {
+    //         return product.product.category === )
+    //     })
+    // }
+
     useEffect(() => {
         // console.log('call product')
         getProducts()
     }, [])
 
     // console.log(products)
-    
+
     return (
         <Container>
+            <NavBar products={products} 
+            // handleClickCat= {handleClickCat}
+            > 
+                <div>je suis</div>
+            {/* {
+                // console.log('je suis le pdt', products)
+                    products.map((data) => (
+                    //    console.log('je susi data', data.product.category)
+                       <div>
+                           {data.product.category}
+                       </div>
+                      
+                    ))
+                } */}
+            </NavBar >
             <Banner>
 
             </Banner>
@@ -52,7 +74,6 @@ function Home() {
                         image ={data.product.image}
                         id={data.id}
                         />
-
                     ))
                 }
             </Content>

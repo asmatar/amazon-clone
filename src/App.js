@@ -7,9 +7,11 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Login from './components/Login';
 import { auth, db } from './firebase';
+
 function App() {
 
   const [cartItems, setCartItems] = useState([])
+  console.log(cartItems)
   // 8. change the state
   // B. we pass the user to the state, if exist we will stay on the page and don't come back to the login page if we refresh 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
@@ -32,8 +34,6 @@ function App() {
   useEffect(() => {
     getCartItems();
   }, [])
-  // console.log('user', user)
-  // console.log(cartItems)
 
   const signOut = () => {
     auth.signOut().then(()=>{
@@ -54,6 +54,7 @@ function App() {
         (
         <Container>
         <Header cartItems={cartItems} user={user} signOut={signOut}/>
+    
         <Switch>
         {/* <Route exact path='/login'> */}
           {/* 7. pass the setUser on props */}

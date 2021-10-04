@@ -15,7 +15,7 @@ function CartItems({cartItems}) {
                 }
             </ItemsContainer>
         </Container>
-    )
+    ) 
 }
 
 export default CartItems

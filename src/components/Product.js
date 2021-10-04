@@ -27,7 +27,7 @@ function Product({title, price, rating, image, id}) {
                     image,
                     price,
                     // the quantty is one, because it's the first product
-                    quantity :1 
+                    quantity :1  
                 })
             }
         })

@@ -57,7 +57,7 @@ function Header({cartItems, user, signOut}) {
                         <CartCount>
                             {/*  t will call the function and return the number of count */}
                             {getCount()}
-                            </CartCount>
+                        </CartCount>
                 </Link>
                     </HeaderOptionCart>
             </HeaderNavItems>
