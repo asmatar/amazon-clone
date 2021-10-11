@@ -6,7 +6,15 @@ const Footer = () => {
     let AmazonPaymentProducts = ['Amazon Business Card', 'Shop with Points', 'Reload Your Balance', 'Amazon Currency Converter']
     let LetUsHelpYou = ['Amazon and COVID-19', 'Your Account', 'Your Orders', 'Shipping Rates & Policies', 'Returns & Replacements', 'Amazon Assistant', 'Help']
     
+    const backToTop = () => {
+       window.scrollTo({
+           top:0, 
+        behavior: 'smooth'
+    })
+    }
     return (
+        <>
+        <Buton onClick={backToTop}> Back to top</Buton>
     <Container>
         <Content>
             <Title>Get to Know Us</Title>
@@ -86,10 +94,23 @@ const Footer = () => {
                 </List>
             </Content>
        </Container>
+       </>
     )
 }
 
 export default Footer
+
+const Buton =styled.button`
+background-color: #37475A;
+height: 50px;
+width: 100vw;
+border: none;
+color: white;
+:hover{
+        background-color: rgba(80,87,100);
+        cursor: pointer;
+    }
+`
 const Container = styled.div`
     display: flex;
     justify-content: center;
