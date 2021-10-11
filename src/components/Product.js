@@ -60,6 +60,7 @@ const Container = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-width: 250px;
 `
 const Title = styled.span`
 height : 20%;
