@@ -12,14 +12,14 @@ import { auth, db } from './firebase';
 function App() {
 
   const [cartItems, setCartItems] = useState([])
-  console.log(cartItems)
+
   // 8. change the state
   // B. we pass the user to the state, if exist we will stay on the page and don't come back to the login page if we refresh 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
 
   const getCartItems = () => {
     db.collection('cartItems').onSnapshot((snapshot)=> {
-      console.log(snapshot)
+
       let tempCartItems = []
 
       tempCartItems = snapshot.docs.map((doc)=> (

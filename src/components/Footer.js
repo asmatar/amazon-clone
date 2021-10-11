@@ -21,7 +21,6 @@ const Footer = () => {
             <List>
             {      
                 GetToKnowUs.map(element => {
-                console.log(element);
                 return (        
                     <>
                         <List>  
@@ -41,7 +40,6 @@ const Footer = () => {
                 <List>
                 {      
                     MakeMoneyWithUs.map(element => {
-                    console.log(element);
                     return (        
                         <>
                             <List>  
@@ -60,7 +58,6 @@ const Footer = () => {
                 <List>
                 {      
                     AmazonPaymentProducts.map(element => {
-                    console.log(element);
                     return (        
                         <>
                             <List>  
@@ -79,7 +76,6 @@ const Footer = () => {
                 <List>
                 {      
                     LetUsHelpYou.map(element => {
-                    console.log(element);
                     return (        
                         <>
                             <List>  

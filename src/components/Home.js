@@ -1,10 +1,18 @@
+import { css } from "@emotion/react";
 import React, { useEffect, useState } from 'react';
+import { RingLoader } from 'react-spinners';
 import styled from 'styled-components';
 import { db } from '../firebase';
 import NavBar from './NavBar';
 import Product from './Product';
-
 function Home() {
+    const loaderCss = css `
+    display: flex;
+    justify-content: center;
+    color: red;
+    margin: 50px auto;
+    text-align: center;
+    `;
     // we want to save the database into the state react, un products.
     //1. we create a variable products to stock them, which is an empty aray at the beggining
     const [products, setProducts] = useState([])
@@ -27,18 +35,20 @@ function Home() {
             ));
             // 7. we wanna save it into the state, using setProducts, we'll put 'tempProducts' as 'products'
             setProducts(tempProducts)
+            setLoading(false)
         })
     }
     // const categoriesFilter = products.filter((product) => (product.product.category === 'laptop'))
     // console.log(categoriesFilter)
+    let [loading, setLoading] = useState(true);
+  console.log(loading)
     const [filteredCat, setFilteredCat] = useState([])
-    console.log('au debut',filteredCat)
-    console.log('ligne35 state', filteredCat)
+
     const handleClick = (event) => {
         event.preventDefault();
-        console.log('ligne 34', event.target.innerHTML)
+     
             const result = (products.filter((product) => product.product.category === event.target.innerHTML))
-            console.log('ligne44',result)
+          
             // return result
             setFilteredCat(result)
             // setProducts(result)
@@ -50,16 +60,21 @@ function Home() {
         getProducts()
     }, [])
 
-
     return (
+        <>
+        
+        {
+                loading ? <RingLoader css={loaderCss} loading color='blue' size={60} /> :
+                <>
         <Container>
             <NavBar products={products} handleClick={handleClick} handleClickAll={handleClickAll}> 
             </NavBar >
-            <Banner>
-
-            </Banner>
+            
+             
+            <Banner />
             <Content>
                 {
+                    
                 filteredCat.length === 0 ?  
                     
                 products.map((data) => (
@@ -88,6 +103,9 @@ function Home() {
                 
             </Content>
         </Container>
+</>
+}
+        </>
     )
 }
 
