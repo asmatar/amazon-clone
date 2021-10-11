@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-const NavBar = ({products, handleClick}) => {
+const NavBar = ({products, handleClick, handleClickAll}) => {
 
     let cat = []
     products.map((data) => ( 
@@ -9,6 +9,7 @@ const NavBar = ({products, handleClick}) => {
     let category = [...new Set(cat)]
     return (
         <Container>
+          <Category onClick={handleClickAll}> all</Category>
             {category.map(category => {
                 return <Category onClick={handleClick}>{category}</Category>
             })}

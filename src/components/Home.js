@@ -43,7 +43,9 @@ function Home() {
             setFilteredCat(result)
             // setProducts(result)
     }
-
+    const handleClickAll = () =>{
+        setFilteredCat(products)
+    }
     useEffect(() => {
         getProducts()
     }, [])
@@ -51,7 +53,7 @@ function Home() {
 
     return (
         <Container>
-            <NavBar products={products} handleClick={handleClick}> 
+            <NavBar products={products} handleClick={handleClick} handleClickAll={handleClickAll}> 
             </NavBar >
             <Banner>
 
@@ -115,4 +117,5 @@ const Content = styled.div`
     /* margin-bottom: 10px; */
     display: flex;
     flex-wrap: wrap;
+    cursor: pointer;
 `
