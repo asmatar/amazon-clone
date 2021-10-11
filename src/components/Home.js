@@ -29,53 +29,61 @@ function Home() {
             setProducts(tempProducts)
         })
     }
-
-    // const handleClickCat = () => {
-    //     products.filter(product => {
-    //         return product.product.category === )
-    //     })
-    // }
+    // const categoriesFilter = products.filter((product) => (product.product.category === 'laptop'))
+    // console.log(categoriesFilter)
+    const [filteredCat, setFilteredCat] = useState([])
+    console.log('au debut',filteredCat)
+    console.log('ligne35 state', filteredCat)
+    const handleClick = (event) => {
+        event.preventDefault();
+        console.log('ligne 34', event.target.innerHTML)
+            const result = (products.filter((product) => product.product.category === event.target.innerHTML))
+            console.log('ligne44',result)
+            // return result
+            setFilteredCat(result)
+            // setProducts(result)
+    }
 
     useEffect(() => {
-        // console.log('call product')
         getProducts()
     }, [])
 
-    // console.log(products)
 
     return (
         <Container>
-            <NavBar products={products} 
-            // handleClickCat= {handleClickCat}
-            > 
-                <div>je suis</div>
-            {/* {
-                // console.log('je suis le pdt', products)
-                    products.map((data) => (
-                    //    console.log('je susi data', data.product.category)
-                       <div>
-                           {data.product.category}
-                       </div>
-                      
-                    ))
-                } */}
+            <NavBar products={products} handleClick={handleClick}> 
             </NavBar >
             <Banner>
 
             </Banner>
             <Content>
                 {
-                    products.map((data) => (
-                        <Product 
-                        key={data.id}
-                        title={data.product.name} 
-                        price ={data.product.price}
-                        rating ={data.product.rating}
-                        image ={data.product.image}
-                        id={data.id}
-                        />
-                    ))
+                filteredCat.length === 0 ?  
+                    
+                products.map((data) => (
+                    <Product 
+                    key={data.id}
+                    title={data.product.name} 
+                    price ={data.product.price}
+                    rating ={data.product.rating}
+                    image ={data.product.image}
+                    id={data.id}
+                    />
+                ))
+                :
+                filteredCat.map((data) => (
+                    <Product 
+                    key={data.id}
+                    title={data.product.name} 
+                    price ={data.product.price}
+                    rating ={data.product.rating}
+                    image ={data.product.image}
+                    id={data.id}
+                    /> 
+                ))
+
                 }
+                
             </Content>
         </Container>
     )

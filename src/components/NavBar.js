@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-const NavBar = ({products, handleClickCat}) => {
-    // const categoryFilter = (event) => {
-    //     event.preventDefault()
-    // console.log(event)
-    // }
-    // const handleClick = (ok) => {
-    //     console.log(ok)
-    //     // handleClickCat(e.target.innerHTML)
-    // }
+const NavBar = ({products, handleClick}) => {
+
+
     // console.log('hors fonction', products)
     //     const handleClick = (cat) => {
     //         console.log('ligne 14')
@@ -21,13 +15,11 @@ const NavBar = ({products, handleClickCat}) => {
     products.map((data) => ( 
         cat.push(data.product.category)
     ))
-        console.log(cat)
     let category = [...new Set(cat)]
-    console.log(category)
     return (
         <Container>
             {category.map(category => {
-                return <Category>{category}</Category>
+                return <Category onClick={handleClick}>{category}</Category>
             })}
         </Container>
     )
@@ -48,15 +40,12 @@ const Container = styled.div`
 
 const Category = styled.button`
     display: flex;
-    margin-left: 20px;
+    margin: 0 20px;
     color: white;
-    /* width: 80px; */
-    /* height: 50%; */
     background-color: #232F3E;
     border: none;
     cursor: pointer;
     &:hover {
         border: 1px solid white;
-        border: none;
     }
 `
