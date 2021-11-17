@@ -22,6 +22,9 @@ const Container = styled.div`
     background-color: #FBFCFC;
     flex: 0.3;
     padding: 20px;
+    @media (max-width: 768px) {
+  margin: 0 auto;
+}
 `
 const Subtotal = styled.h2`
     margin-bottom: 16px;

@@ -17,7 +17,8 @@ function Header({cartItems, user, signOut}) {
         });
         return count;
     }
-
+    console.log(window)
+console.log( navigator.geolocation)
     return (
         <Container>
             <HeaderLogo>
@@ -29,7 +30,7 @@ function Header({cartItems, user, signOut}) {
             <HeaderOptionAdress>
                 <LocationOnIcon />
                 <HeaderOption>
-                    <OptionLineOne>Hello </OptionLineOne>
+                    {/* <OptionLineOne>Hello </OptionLineOne> */}
                     <OptionLineTwo>Select your adress</OptionLineTwo>
                 </HeaderOption>
             </HeaderOptionAdress>
@@ -97,17 +98,20 @@ const HeaderSearch = styled.div`
     flex-grow: 1;
     height: 40px;
     border-radius: 4px;
-    overflox: hidden;
+    overflow: hidden;
     margin-left: 4px;
     background-color: white;
     :focus-within {
         box-shadow: 0 0 0 3px #F90;
     }
+    @media (max-width: 768px) {
+    flex-direction: column;
+    display: none;
+}
 `
 const HeaderSearchInput = styled.input`
     flex-grow:1;
     border: 0; 
-
     :focus {
         outline: none;
     }

@@ -8,15 +8,20 @@ function Cart({cartItems}) {
   // loop through all the carttem
   const getTotalPrice = () => {
     //create total which is the value of the total price
-    let total = 0;
+    // let total = 0;
     
-    // for each carItem
-    cartItems.forEach((item) => {
-      // add the price of the item multiplied byt the quantity
-      total += (item.product.price * item.product.quantity)
-    });
-    return total
+    // // for each carItem
+    // cartItems.forEach((item) => {
+    //   // add the price of the item multiplied byt the quantity
+    //   total += (item.product.price * item.product.quantity)
+    // });
+    // return total
     // save it
+
+    // way 2
+    let total = cartItems.reduce((total, item) => total + (item.product.price * item.product.quantity), 0)
+
+    return total
   }
 
   const getCount = () => {
@@ -46,4 +51,8 @@ const Container = styled.div`
     display: flex;
     padding: 14px 18px 0px 18px;
     align-items: flex-start;
+
+    @media (max-width: 768px) {
+  flex-direction: column;
+}
 `
