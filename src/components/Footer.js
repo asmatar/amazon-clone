@@ -123,11 +123,13 @@ const Title = styled.h4`
 `
 const Ul = styled.div`
     text-align: left;
-
+    :hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
 `
 const List = styled.div`
     list-style: none;
-    cursor: pointer;
     text-align: left;
     line-height: 35px;
 `
