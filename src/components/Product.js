@@ -61,6 +61,9 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     min-width: 250px;
+    &:hover{
+        box-shadow: 0 0 11px rgba(33,33,33,.2);
+    }
 `
 const Title = styled.span`
 height : 20%;
@@ -83,6 +86,11 @@ const AddToCartButton = styled.button`
     border-radius: 2px;
     height: 30px;
     cursor: pointer;
+    transition: all .2s ease-in-out;
+    &:hover{
+        box-shadow: 0 0 11px rgba(33,33,33,.2);
+        transform: scale(1.1);
+    }
 `
 const ActionSection = styled.div`
     margin-top: 12px;

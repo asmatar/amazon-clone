@@ -22,7 +22,7 @@ function Header({cartItems, user, signOut}) {
         <Container>
             <HeaderLogo>
                 <Link to='/'>
-                    <img src={"https://i.imgur.com/7I9Was5.png"} alt="image logo" />
+                    <img src={"https://i.imgur.com/7I9Was5.png"} alt=" logo" />
                 </Link>
             </HeaderLogo>
 

@@ -98,10 +98,13 @@ const CartItemInfoButtom = styled.div`
 const CartItemQuantity = styled.div`
     select {
         border-radius: 7px;
-        background-color: #F0F2F2;
+        background-color: white;
         padding: 8px;
         box-shadow: 0 2px 5px rgba(15,17,17, 0.15);
-        
+        cursor: pointer;
+        :hover{
+            background-color: #F0F2F2;
+        }
         :focus {
             outline: none;
         }
@@ -111,6 +114,9 @@ const CartItemDelete = styled.div`
     color: #007185;
     margin-left: 16px;
     cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+    }
 `
 const CartItemPrice = styled.div`
     font-size: 18px;

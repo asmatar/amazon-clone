@@ -11,7 +11,7 @@ const NavBar = ({products, handleClick, handleClickAll}) => {
         <Container>
           <Category onClick={handleClickAll}> all</Category>
             {category.map(category => {
-                return <Category onClick={handleClick}>{category}</Category>
+                return <Category key={category.name} onClick={handleClick}>{category}</Category>
             })}
         </Container>
     )
