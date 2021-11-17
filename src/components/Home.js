@@ -45,7 +45,7 @@ function Home() {
     let [loading, setLoading] = useState(true);
 
     const [filteredCat, setFilteredCat] = useState([])
-
+console.log('filteredCat', filteredCat)
     const handleClick = (event) => {
         event.preventDefault();
      
@@ -79,20 +79,38 @@ function Home() {
             </Carousel >
             {/* <Banner /> */}
             <Content>
-               
+            
                 {
                 filteredCat.length === 0 ?  
                 
-                products.slice(0,6).map((data) => (
-                    <Product 
-                    key={data.id}
-                    title={data.product.name} 
-                    price ={data.product.price}
-                    rating ={data.product.rating}
-                    image ={data.product.image}
-                    id={data.id}
-                    />
-                ))
+                (
+                   <>
+                    {products.slice(0,6).map((data) => (
+                        <Product 
+                        key={data.id}
+                        title={data.product.name} 
+                        price ={data.product.price}
+                        rating ={data.product.rating}
+                        image ={data.product.image}
+                        id={data.id}
+                        />
+                    ))}
+                   
+                    <img src="https://links.papareact.com/dyz" alt="add" />
+
+                   { products.slice(6).map((data) => (
+                        <Product 
+                        key={data.id}
+                        title={data.product.name} 
+                        price ={data.product.price}
+                        rating ={data.product.rating}
+                        image ={data.product.image}
+                        id={data.id}
+                        />
+                    ))}
+                    {/* </div> */}
+                    </>
+                )
                 :
                 filteredCat.map((data) => (
                     <Product 
@@ -105,14 +123,13 @@ function Home() {
                     /> 
                 ))
                 }  
-                <div>
-                    <img src="https://links.papareact.com/dyz" alt="add" /> 
-                </div>
-                  {
+                  {/* {
                
                filteredCat.length === 0 ?  
-               
+              
                products.slice(6).map((data) => (
+                console.log(products),
+                   console.log(products.slice(6)),
                    <Product 
                    key={data.id}
                    title={data.product.name} 
@@ -133,7 +150,7 @@ function Home() {
                    id={data.id}
                    /> 
                ))
-            }
+            } */}
             </Content>
         </Container>
 </>
