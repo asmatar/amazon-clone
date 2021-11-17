@@ -20,23 +20,20 @@ const NavBar = ({products, handleClick, handleClickAll}) => {
 export default NavBar
 
 const Container = styled.div`
-    padding-top: 12px;
-    padding-bottom: 12px;
     display: flex;
-    border-bottom: 1px solid grey;
+    align-items: center;
     background-color: #232F3E;
-    color: white;
-    width: 100%;
-    height: 20px;
+    height: 50px;
 `
 
 const Category = styled.button`
-    display: flex;
-    margin: 0 20px;
+
+    cursor: pointer; 
+    padding: 5px 10px;
     color: white;
-    background-color: #232F3E;
+    background-color: transparent;
     border: none;
-    cursor: pointer;
+    width: 90px;
     &:hover {
         border: 1px solid white;
     }
