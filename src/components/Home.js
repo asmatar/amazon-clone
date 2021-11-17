@@ -1,5 +1,7 @@
 import { css } from "@emotion/react";
 import React, { useEffect, useState } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { RingLoader } from 'react-spinners';
 import styled from 'styled-components';
 import { db } from '../firebase';
@@ -69,9 +71,13 @@ function Home() {
         <Container>
             <NavBar products={products} handleClick={handleClick} handleClickAll={handleClickAll}> 
             </NavBar >
-            
-             
-            <Banner />
+            <img src="" alt="" />
+            <Carousel autoPlay infiniteLoop showStatus={false} interval={3000} showThumbs={false} showIndicators={false}>
+            <div><img loading="lazy" src="https://links.papareact.com/gi1" alt="" /> </div>
+            <div>  <img src="https://links.papareact.com/6ff" alt="" /></div>
+            <div>  <img src="https://links.papareact.com/7ma" alt="" /></div>
+            </Carousel >
+            {/* <Banner /> */}
             <Content>
                 {
                     
@@ -117,7 +123,7 @@ const Container = styled.div`
     margin: 0 auto;
 `
 const Banner = styled.div`
-    background-image: url(https://i.imgur.com/SYHeuYM.jpg);
+    background-image: url('https://i.imgur.com/SYHeuYM.jpg');
     min-height: 600px;
     // the position of the background
     background-position: center;
