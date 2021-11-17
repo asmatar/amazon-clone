@@ -81,7 +81,7 @@ console.log('filteredCat', filteredCat)
             <Content>
             
                 {
-                filteredCat.length === 0 ?  
+                filteredCat.length === 0 ||  filteredCat.length === 17 ?  
                 
                 (
                    <>
