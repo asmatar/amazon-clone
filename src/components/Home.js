@@ -71,11 +71,11 @@ console.log('filteredCat', filteredCat)
         <Container>
             <NavBar products={products} handleClick={handleClick} handleClickAll={handleClickAll}> 
             </NavBar >
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
             <Carousel autoPlay infiniteLoop showStatus={false} interval={3000} showThumbs={false} showIndicators={false}>
-            <div><img loading="lazy" src="https://links.papareact.com/gi1" alt="" /> </div>
-            <div>  <img src="https://links.papareact.com/6ff" alt="" /></div>
-            <div>  <img src="https://links.papareact.com/7ma" alt="" /></div>
+            <ImgCarousel><img loading="lazy" src="https://links.papareact.com/gi1" alt="" /> </ImgCarousel>
+            <ImgCarousel>  <img src="https://links.papareact.com/6ff" alt="" /></ImgCarousel>
+            <ImgCarousel>  <img src="https://links.papareact.com/7ma" alt="" /></ImgCarousel>
             </Carousel >
             {/* <Banner /> */}
             <Content>
@@ -96,7 +96,7 @@ console.log('filteredCat', filteredCat)
                         />
                     ))}
                    
-                    <img src="https://links.papareact.com/dyz" alt="add" />
+                    <AddImg src="https://links.papareact.com/dyz" alt="add" />
 
                    { products.slice(6).map((data) => (
                         <Product 
@@ -181,9 +181,28 @@ const Content = styled.div`
     // background: white;
     padding-left: 10px;
     padding-right: 10px;
-    margin-top: -350px;
+    margin-top: -140px;
+    /* min-width: 80%; */
     /* margin-bottom: 10px; */
     display: flex;
     flex-wrap: wrap;
     cursor: pointer;
+    @media screen and (max-width: 640px) {
+        margin-top: -140px;
+}
+@media screen and (min-width: 768px) {
+    margin-top: -200px;
+}
+@media screen and (min-width: 1024px) {
+    margin-top: -260px;
+}
+@media screen and (min-width: 1280px) {
+    margin-top: -300px;
+}
+`
+const ImgCarousel = styled.div`
+
+`
+const AddImg = styled.img`
+    max-width: 100%;
 `

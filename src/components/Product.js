@@ -53,7 +53,7 @@ export default Product
 
 const Container = styled.div`
     background-color: white;
-    z-index: 100;
+    z-index: 1;
     max-height: 400px;
     padding: 20px;
     margin: 10px;

@@ -5,7 +5,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-function Header({cartItems, user, signOut}) {
+function Header({cartItems, user, signOut, products}) {
+
+
 // console.log('je suis dans le header', user)
     const getCount = () => {
         let count = 0;
@@ -17,8 +19,7 @@ function Header({cartItems, user, signOut}) {
         });
         return count;
     }
-    console.log(window)
-console.log( navigator.geolocation)
+
     return (
         <Container>
             <HeaderLogo>
