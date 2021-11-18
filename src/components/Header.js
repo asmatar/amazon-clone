@@ -76,6 +76,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     color: white;
+    /* overflow-y: hidden; */
 `
 const HeaderLogo = styled.div`
 

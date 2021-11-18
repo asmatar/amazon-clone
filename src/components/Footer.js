@@ -99,7 +99,7 @@ export default Footer
 const Buton =styled.button`
 background-color: #37475A;
 height: 50px;
-width: 100vw;
+width: 100%;
 border: none;
 color: white;
 :hover{
